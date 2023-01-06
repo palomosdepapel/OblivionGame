@@ -7,7 +7,7 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private string enemyName;
     public float enemyHealth = 100; // vida del jugador
     public float enemySpeed = 1;
-    [SerializeField] private Vector3 direction;
+    [SerializeField] private Vector3 directionEnemy;
     //[SerializeField] private Vector3 size;
     //public float enemySpeed;
     //public float damage;
@@ -19,6 +19,7 @@ public class EnemyScript : MonoBehaviour
         //damage = 2;
         enemyName = "Drone 166";
         enemySpeed = 0.1f;
+        
         // vida CHAR = vida CHAR - daño ES - defensa CHAR
         // character.health = character.health - damage - character.defense;
         // character.health -= damage - character.defense;
@@ -28,6 +29,8 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         Movement(0.1f, new Vector3(0, 0.01f, 0));
+        
+        //Debug.Log("Te speed is: " + enemySpeed);
         //transform.position += movement;
         //transform.localScale += size;
         //transform.position += enemySpeed * Time.deltaTime * transform.forward;
@@ -57,9 +60,15 @@ public class EnemyScript : MonoBehaviour
         enemySpeed -= 1;
     }
 
-    public void Movement(float speedEnemy, Vector3 direction)
+    public void Movement(float speedEnemy, Vector3 directionEnemy)
     {
         transform.position += transform.position * enemySpeed * Time.deltaTime;
     }
+
+    private void LateUpdate()
+    {
+        Debug.Log("The current altitude of the enemy is: " + transform.position.y);
+    }
+
 
 }
