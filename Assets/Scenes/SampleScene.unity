@@ -331,16 +331,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3dab1498b794cea4f83fa3dfc5c3da71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  age: 42
-  health: 100
-  damage: 99.424225
-  defense: 0
-  useRaytracing: 0
-  earthRotation: 135.2245245424524
-  gridPosition: {x: 0, y: 0}
-  myPosition: {x: 0, y: 0, z: 0}
-  viewPosition: {x: 0, y: 0, z: 0, w: 0}
-  characterName: Tom
+  characterName: someone
+  characterHealth: 100
+  characterSpeed: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,8 +623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyName: Drone 166
-  movement: {x: 0, y: 0.001, z: 0}
-  size: {x: 0.001, y: 0.0015, z: 0.001}
-  enemySpeed: 3
-  damage: 0
-  character: {fileID: 332297141}
+  enemyHealth: 100
+  enemySpeed: 1
+  direction: {x: 0, y: 0, z: 0}
