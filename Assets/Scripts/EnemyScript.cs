@@ -5,8 +5,8 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     [SerializeField] private string enemyName;
-    public float enemyHealth = 100; // vida del jugador
-    public float enemySpeed = 1;
+    [SerializeField] private float enemyHealth = 100; // vida del jugador
+    [SerializeField] private float enemySpeed = 1;
     [SerializeField] private Vector3 directionEnemy;
     //[SerializeField] private Vector3 size;
     //public float enemySpeed;

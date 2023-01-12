@@ -5,8 +5,8 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] private string characterName; // con atributo SerializeField para guardar
-    public float characterHealth = 100; // vida del jugador
-    public float characterSpeed = 1;
+    [SerializeField] private float characterHealth = 100; // vida del jugador
+    [SerializeField] private float characterSpeed = 1;
     //public float damage; // daño del jugador
     //public int age; //edad del jugador
     //public float defense;
