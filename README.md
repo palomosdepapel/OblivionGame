@@ -8,7 +8,7 @@ El videojuego se basa en la película Oblivion de Joseph Kosinski y se compone d
 - Drones (AI): Volar, Disparar, Buscar y destruír apenas detecten al player: Partes móviles: Escanear, Apertura base cañones
 - SkyTower o base de operaciones: Plataforma de aterrizaje
 - Terreno: Múltiple (árido, rocoso, glaciar, costero) 
-- Época: post-apocalíptico
+- Ambientacion: futurista, acción, post-apocalíptica
 - Número de escenas: 01 menu, 02 entrenamiento (aprender a despegar, aterrizar, disparar, salir al espacio exterior), 03 combate uno a uno
 
 Ya previamente con tutoriales de Unity en Youtube llegué (y me estanqué) en esto: https://youtu.be/9z6J_JN78Xs
