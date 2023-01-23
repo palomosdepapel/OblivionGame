@@ -25,7 +25,9 @@ public class Canyon : MonoBehaviour
         if (Input.GetKeyDown(Firebutton))
         {
             Instantiate(bullet,origin);
+            Debug.Log("Fire!!!!");
         }
     }
+
 
 }

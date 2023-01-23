@@ -67,7 +67,7 @@ public class EnemyScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.Log("The current altitude of the enemy is: " + transform.position.y);
+        //Debug.Log("The current altitude of the enemy is: " + transform.position.y);
     }
 
 
