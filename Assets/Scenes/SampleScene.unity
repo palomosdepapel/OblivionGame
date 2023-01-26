@@ -459,6 +459,11 @@ MonoBehaviour:
   characterName: 
   characterHealth: 100
   characterSpeed: 1
+  speed: 0
+  maxSpeed: 100
+  minSpeed: 1
+  rootSpeed1: 50
+  rootSpeed2: 50
 --- !u!135 &1308122606
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -538,6 +543,7 @@ Transform:
   - {fileID: 1659160551}
   - {fileID: 1755279390}
   - {fileID: 1439196700}
+  - {fileID: 1608314967}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -714,14 +720,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608314964}
-  m_LocalRotation: {x: -0, y: -0.9614399, z: -0, w: 0.27501515}
-  m_LocalPosition: {x: 6.08, y: 1.69, z: 8.04}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.004, y: 0.06, z: 0.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -148.074, z: 0}
+  m_Father: {fileID: 1308122609}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659160547
 GameObject:
   m_ObjectHideFlags: 0
