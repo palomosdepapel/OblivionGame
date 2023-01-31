@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField] private string characterName; // con atributo SerializeField para guardar
+    [SerializeField] private string characterName; // Usualmente Tech49
     [SerializeField] private float characterHealth = 100; // vida del jugador
-    [SerializeField] private float characterSpeed = 1;
-    [SerializeField] private float speed = 2;
-    [SerializeField] private float maxSpeed = 100;
-    [SerializeField] private float minSpeed = 1;
-    [SerializeField] private float rootSpeed1 = 50;
+    [SerializeField] private float speed = 0; // Velocidad inicial
+    [SerializeField] private float maxSpeed = 100; // Velocidad máxima
+    [SerializeField] private float minSpeed = 0; // Velocidad mínima
+    [SerializeField] private float rootSpeed1 = 50; // Velocidad inicial
     [SerializeField] private float rootSpeed2 = 50;
 
 
@@ -18,7 +17,7 @@ public class Character : MonoBehaviour
     void Start()
     {
         characterName = "Jack Harper Tech 49";
-        characterSpeed = 2.2f;
+        speed = 0f;
     }
 
     // Update is called once per frame
@@ -26,21 +25,21 @@ public class Character : MonoBehaviour
     {
         transform.position += transform.forward * speed * Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F4)) // Incrementar velocidad
         {
             if (speed <= maxSpeed)
             {
                 speed += 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.F1)) //Reducir velocidad
         {
             if (speed >= minSpeed)
             {
                 speed -= 1;
             }
         }
-
+        // control de movimiento con las teclas de flechas o ADSW
         if (Input.GetKey(KeyCode.RightArrow) == Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward * rootSpeed2 * Time.deltaTime);
