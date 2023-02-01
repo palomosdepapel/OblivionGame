@@ -4,31 +4,52 @@ using UnityEngine;
 
 public class CamSwitch : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject cam1;
-    public GameObject cam2;
-    public GameObject cam3;
+    // Declaracion de variables
+    public GameObject[] listaCamaras;
+    int ncamaras = 3;
 
+    private void Start()
+    {
+        // desactivamos las camaras
+        for(int i=0; i<ncamaras; i++)
+        {
+            listaCamaras[i].gameObject.SetActive(false);
+        }
+        // activamos la primera camara
+        listaCamaras[0].gameObject.SetActive(true);
+    }
+
+    void ApagarCamaras()
+    {
+        // desactivamos las camaras
+        for (int i = 0; i < ncamaras; i++)
+        {
+            listaCamaras[i].gameObject.SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Switch1"))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            cam1.SetActive(true);
-            cam2.SetActive(false);
-            cam3.SetActive(false);
+            Debug.Log("Oprimiste la tecla 1");
+            ApagarCamaras();
+            // activamos la primera camara
+            listaCamaras[0].gameObject.SetActive(true);
         }
-        if (Input.GetButtonDown("Switch2"))
+        if (Input.GetKey(KeyCode.Alpha2))
         {
-            cam1.SetActive(false);
-            cam2.SetActive(true);
-            cam3.SetActive(false);
+            Debug.Log("Oprimiste la tecla 2");
+            ApagarCamaras();
+            // activamos la primera camara
+            listaCamaras[1].gameObject.SetActive(true);
         }
-        if (Input.GetButtonDown("Switch3"))
+        if (Input.GetKey(KeyCode.Alpha3))
         {
-            cam1.SetActive(false);
-            cam2.SetActive(false);
-            cam3.SetActive(true);
+            Debug.Log("Oprimiste la tecla 3");
+            ApagarCamaras();
+            // activamos la primera camara
+            listaCamaras[2].gameObject.SetActive(true);
         }
     }
 }
