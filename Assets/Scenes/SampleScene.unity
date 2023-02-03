@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 119030833}
   - component: {fileID: 119030832}
   m_Layer: 0
-  m_Name: Base3
+  m_Name: PatinTrasero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -312,7 +312,7 @@ Transform:
   m_GameObject: {fileID: 307082633}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.665, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.70102227, y: 0.70102227, z: 0.70102227}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -335,7 +335,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!81 &358749053
 AudioListener:
@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 795065382}
   - component: {fileID: 795065381}
   m_Layer: 0
-  m_Name: Base1
+  m_Name: PatinDer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 908575270}
   - component: {fileID: 908575269}
   m_Layer: 0
-  m_Name: Base2
+  m_Name: PatinIzq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   characterName: 
   characterHealth: 100
   speed: 0
-  maxSpeed: 100
+  maxSpeed: 1000
   minSpeed: 1
   rootSpeed1: 50
   rootSpeed2: 50
@@ -1055,7 +1055,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 5
   m_UseGravity: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1168,6 +1168,7 @@ GameObject:
   - component: {fileID: 1608314966}
   - component: {fileID: 1608314965}
   - component: {fileID: 1608314968}
+  - component: {fileID: 1608314969}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: Untagged
@@ -1233,8 +1234,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608314964}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.03, z: -0.15}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1257,6 +1258,18 @@ MonoBehaviour:
   - {fileID: 1608314964}
   - {fileID: 358749052}
   - {fileID: 827252365}
+--- !u!114 &1608314969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608314964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b64b95b3906cd42a0434087dfbcedd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755279389
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,8 +1426,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2115065019}
   m_LocalRotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
-  m_LocalPosition: {x: 0.006, y: 0.38, z: 0.405}
-  m_LocalScale: {x: 0.05, y: 0.1, z: 0.05}
+  m_LocalPosition: {x: 0.004, y: 0.437, z: 0.306}
+  m_LocalScale: {x: 0.05, y: 0.26349002, z: 0.05}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1892471776}
@@ -1591,7 +1604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138299095}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.84, y: 0.95, z: -6.44}
+  m_LocalPosition: {x: 0.96, y: 0.95, z: 19.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

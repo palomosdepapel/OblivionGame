@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
     [SerializeField] private string characterName; // Usualmente Tech49
     [SerializeField] private float characterHealth = 100; // vida del jugador
     [SerializeField] private float speed = 0; // Velocidad inicial
-    [SerializeField] private float maxSpeed = 100; // Velocidad máxima
+    [SerializeField] private float maxSpeed = 1000; // Velocidad máxima
     [SerializeField] private float minSpeed = 0; // Velocidad mínima
     [SerializeField] private float rootSpeed1 = 50; // Velocidad inicial
     [SerializeField] private float rootSpeed2 = 50;
@@ -24,37 +24,66 @@ public class Character : MonoBehaviour
     void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
+        transform.Rotate(0,Input.GetAxis("Mouse X"),0);
 
         if (Input.GetKeyDown(KeyCode.F4)) // Incrementar velocidad
+        {
+            if (speed <= maxSpeed)
+            {
+                speed += 20;
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.F3)) //Incrementar velocidad
         {
             if (speed <= maxSpeed)
             {
                 speed += 1;
             }
         }
-        if (Input.GetKeyDown(KeyCode.F1)) //Reducir velocidad
+        if (Input.GetKeyDown(KeyCode.F2)) //Reducir velocidad
         {
             if (speed >= minSpeed)
             {
                 speed -= 1;
             }
         }
+        if (Input.GetKeyDown(KeyCode.F1)) //Reducir velocidad
+        {
+            if (speed >= minSpeed)
+            {
+                speed -= 20;
+            }
+        }
         // control de movimiento con las teclas de flechas o ADSW
+        // derecha
         if (Input.GetKey(KeyCode.RightArrow) == Input.GetKey(KeyCode.A))
         {
             transform.Rotate(Vector3.forward * rootSpeed2 * Time.deltaTime);
         }
+        // izquierda
         if (Input.GetKey(KeyCode.LeftArrow) == Input.GetKey(KeyCode.D))
         {
             transform.Rotate(Vector3.back * rootSpeed2 * Time.deltaTime);
         }
+        // adelante
         if (Input.GetKey(KeyCode.UpArrow) == Input.GetKey(KeyCode.S))
         {
             transform.Rotate(Vector3.left * rootSpeed1 * Time.deltaTime);
         }
+        // atras
         if (Input.GetKey(KeyCode.DownArrow) == Input.GetKey(KeyCode.W))
         {
             transform.Rotate(Vector3.right * rootSpeed1 * Time.deltaTime);
+        }
+        // arriba
+        //if (Input.GetKey(KeyCode.KeypadPlus) == Input.GetKey(KeyCode.W))
+        {
+            //transform.Rotate(Vector3.up * rootSpeed1 * Time.deltaTime);
+        }
+        // abajo
+        //if (Input.GetKey(KeyCode.KeypadMinus) == Input.GetKey(KeyCode.W))
+        {
+            //transform.Rotate(Vector3.down * rootSpeed2 * Time.deltaTime);
         }
     }
 
