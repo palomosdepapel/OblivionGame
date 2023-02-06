@@ -62,7 +62,7 @@ public class EnemyScript : MonoBehaviour
 
     public void Movement(float speedEnemy, Vector3 directionEnemy)
     {
-        transform.position += transform.position * enemySpeed * Time.deltaTime;
+        //transform.position += transform.position * enemySpeed * Time.deltaTime;
     }
 
     private void LateUpdate()

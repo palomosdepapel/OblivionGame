@@ -6,27 +6,29 @@ public class Canyon : MonoBehaviour
 {
     [SerializeField] private KeyCode Firebutton;
     public GameObject bullet;
-    public Transform origin;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public float fireRate = 6;
+    private float waitTillNextFire = 0.0f;
+    public Transform gunTransform;
 
     // Update is called once per frame
     void Update()
     {
-        Checkbottom();
+        ShottingBullets();
     }
 
-    public void Checkbottom()
+    public void ShottingBullets()
     {
-        if (Input.GetKeyDown(Firebutton))
+        if (Input.GetKey(Firebutton)) //GetKeyDown como cañon o GetKey como ametralladora
         {
-            Instantiate(bullet,origin);
-            Debug.Log("Fire!!!!");
+            if (waitTillNextFire <= 0)
+            {
+                Instantiate(bullet,gunTransform.position, gunTransform.rotation);
+                waitTillNextFire = 1;
+                //Debug.Log("Fire!!!!");
+            }
+            
         }
+        waitTillNextFire -= fireRate * Time.deltaTime;
     }
 
 

@@ -24,7 +24,7 @@ public class Bullet : MonoBehaviour
     }
     private void Countdown()
     {
-        Debug.Log(Time.time + " is current time");
+        //Debug.Log(Time.time + " is current time");
         if (lifetime <= Time.time)
         {
             KillBullet();
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
 
     private void KillBullet()
     {
-        Debug.Log("Bullet killed");
+        //Debug.Log("Bullet killed");
         Destroy(gameObject);
     }
 

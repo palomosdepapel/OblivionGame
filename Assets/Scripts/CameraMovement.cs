@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    // Update is called once per frame
     void Update()
     {
-        transform.Rotate(Input.GetAxis("Mouse Y"),0,0);
+        transform.Rotate(Input.GetAxis("Mouse Y"),0,0); // Vista libre en "Y" dentro de la cabina con el movimiento del ratón
     }
 }
