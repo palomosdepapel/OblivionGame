@@ -142,6 +142,7 @@ public class DroneMovementScript : MonoBehaviour
     }
 
     private AudioSource droneSound;
+    [SerializeField] public int itemQuantity;
     void DroneSound()
     {
         droneSound.pitch = 1 + (ourDrone.velocity.magnitude / 100);
@@ -157,6 +158,13 @@ public class DroneMovementScript : MonoBehaviour
         if (other.name == "Energize Zone")
         {
             Debug.Log("Se ha ingresado a la zona de carga de energía");
+        }
+        if (other.tag == "Item")
+        {
+            Debug.Log("Hemos capturado un item");
+            Destroy(other.gameObject);
+            itemQuantity = itemQuantity +1;
+
         }
     }
     private void OnTriggerExit(Collider other)
