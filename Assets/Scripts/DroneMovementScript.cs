@@ -17,7 +17,7 @@ public class DroneMovementScript : MonoBehaviour
     {
         MovementUpDown(); // arriba-abajo
         MovementForward();  //adelante
-        Rotation(); // rotación
+        Rotation(); // rotaciOn
         ClampingSpeedValues(); 
         Swerve(); //viraje
         DroneSound(); // sonido turbinas
@@ -163,7 +163,7 @@ public class DroneMovementScript : MonoBehaviour
         {
             Debug.Log("Hemos capturado un item");
             Destroy(other.gameObject);
-            itemQuantity = itemQuantity +1;
+            itemQuantity++;
 
         }
     }

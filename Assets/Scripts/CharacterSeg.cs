@@ -81,12 +81,12 @@ public class CharacterSeg : MonoBehaviour
     // daño
     public void characterDamage()
     {
-        characterHealth = characterHealth - 5;
+        characterHealth -= 5;
     }
 
     // cura
     public void characterHeal()
     {
-        characterHealth = characterHealth + 10;
+        characterHealth += 10;
     }
 }

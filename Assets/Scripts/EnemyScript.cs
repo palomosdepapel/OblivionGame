@@ -15,7 +15,7 @@ public class EnemyScript : MonoBehaviour
         //damage = 2;
         enemyName = "Drone 166";
         //enemySpeed = 0.1f;
-        player = GameObject.Find("Bubleship");
+        player = GameObject.Find("BubbleShip");
     }
 
     // Update is called once per frame
@@ -27,12 +27,12 @@ public class EnemyScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.name == "Bubleship")
+        if (collision.collider.name == "BubbleShip")
             Debug.Log("El drone nos ha impactado");
         if (collision.collider.tag == "Bullet")
         {
             Destroy(collision.collider.gameObject);
-            enemyHealth = enemyHealth - 30;
+            enemyHealth -= 30;
             
             if (enemyHealth <= 0)
             {
