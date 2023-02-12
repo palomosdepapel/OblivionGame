@@ -32,9 +32,9 @@ public class EnemyScript : MonoBehaviour
         if (collision.collider.tag == "Bullet")
         {
             Destroy(collision.collider.gameObject);
-            enemyHealth = enemyHealth - 20;
+            enemyHealth = enemyHealth - 30;
             
-            if (enemyHealth == 0)
+            if (enemyHealth <= 0)
             {
                 Destroy(gameObject);
             }

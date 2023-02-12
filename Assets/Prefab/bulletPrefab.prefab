@@ -4968,4 +4968,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletForce: 4000
   bulletHole_prefab: {fileID: 4685301630781217174, guid: 3060ea618bba3764b9cb186ce6ee7d5c, type: 3}
-  distanceFromTheWall: 0.05
+  distanceFromTheWall: 0.1
