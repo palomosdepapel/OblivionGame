@@ -15,16 +15,16 @@ Ya previamente con tutoriales de Unity en Youtube llegué (y me estanqué) en es
 
 Comandos usados:
 
-> Vista 360 de la cabina = Clic izquierdo mouse
-> Disparar = Space 
-> Ir adelante =  flecha adelante
-> Ir atrás =  flecha atrás 
-> Alabeo derecha =  flecha derecha
-> Alabeo izquierda =  flecha izquierda
-> Subir levitando = Tecla I
-> Bajar levitando =  Tecla K
-> Rotar a al derecha = Tecla L
-> Rotar a la izquierda = Tecla J
+> - Vista 360 de la cabina = Clic izquierdo mouse
+> - Disparar = Space 
+> - Ir adelante =  flecha adelante
+> - Ir atrás =  flecha atrás 
+> - Alabeo derecha =  flecha derecha
+> - Alabeo izquierda =  flecha izquierda
+> - Subir levitando = Tecla I
+> - Bajar levitando =  Tecla K
+> - Rotar a al derecha = Tecla L
+> - Rotar a la izquierda = Tecla J
 
 - Zona verde invisible: plataforma de aterrizaje de la SkyTower > recarga de energía, restauración de puntos
 - Zona roja visible en la base > zona de radiación que resta puntos (zonido al ingresar a ella)
