@@ -5,6 +5,7 @@ using UnityEngine;
 public class DroneMovementScript : MonoBehaviour
 {
     Rigidbody ourDrone;
+    [SerializeField] private float playerHealth = 100; // vida del jugador
 
     [System.Obsolete]
     void Awake()
@@ -179,6 +180,14 @@ public class DroneMovementScript : MonoBehaviour
         if (other.tag == "Zone")
         {
             Debug.Log("En la zona");
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)//player comprueba si colisiona con una bala
+    {
+        if (collision.gameObject.CompareTag("BulletEnemy"))
+        {
+            playerHealth -= 30;
         }
     }
 }

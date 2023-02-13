@@ -18,7 +18,7 @@ Comandos usados:
 Vista 360 de la cabina = Clic izquierdo mouse
 Disparar = Space 
 Ir adelante =  flecha adelante
-Ir atrás =  flecha atrás
+Ir atrás =  flecha atrás 
 Alabeo derecha =  flecha derecha
 Alabeo izquierda =  flecha izquierda
 Subir levitando = Tecla I
