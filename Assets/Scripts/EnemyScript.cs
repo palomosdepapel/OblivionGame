@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private string enemyName;
     [SerializeField] private float enemyHealth = 100; // vida del jugador
     [SerializeField] private float enemyRate = 5; // rata de velocidad
+    // detección
+    public float alertRange;
     // información para disparar y destruír al player
     public GameObject enemyBullet;
     public Transform spawnBulletPoint;
@@ -32,7 +34,7 @@ public class EnemyScript : MonoBehaviour
     void Update()
     {
         transform.LookAt(player.transform); // el enemigo rota (mira) hacia el player
-        GetComponent<Rigidbody>().velocity = transform.forward * enemyRate;
+        GetComponent<Rigidbody>().velocity = transform.forward * enemyRate; // el enemigo se dirige al player
 
     }
 
@@ -60,5 +62,11 @@ public class EnemyScript : MonoBehaviour
         newBullet = Instantiate(enemyBullet, spawnBulletPoint.position, spawnBulletPoint.rotation);
         newBullet.GetComponent<Rigidbody>().AddForce(playerDirection*bulletVelocity,ForceMode.Force);
         Invoke("ShootPlayer", 3);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, alertRange);
     }
 }
