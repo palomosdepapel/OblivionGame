@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
-    // información de vida y velocidad
+    public float alertRange;
+    public LayerMask playerLayer;
+    bool beAlert;
+    public Transform searchPlayer;
+    public float speed;
     [SerializeField] private string enemyName;
     [SerializeField] private float enemyHealth = 100; // vida del jugador
     [SerializeField] private float enemyRate = 5; // rata de velocidad
@@ -14,26 +18,27 @@ public class EnemyScript : MonoBehaviour
     private Transform playerPosition;
     public float bulletVelocity = 1;
 
-
-    GameObject player;
-
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        //damage = 2;
-        enemyName = "Drone 166";
-        //enemySpeed = 0.1f;
-        player = GameObject.Find("BubbleShip");
-        playerPosition = FindObjectOfType<DroneMovementScript>().transform;
-        Invoke("ShootPlayer", 3);
+        //Invoke("ShootPlayer", 3);
     }
-
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(player.transform); // el enemigo rota (mira) hacia el player
-        GetComponent<Rigidbody>().velocity = transform.forward * enemyRate;
+        beAlert = Physics.CheckSphere(transform.position, alertRange, playerLayer);
+        if (beAlert == true)
+        {
+            //transform.LookAt(searchPlayer);
+            Vector3 positionPlayer = new Vector3(searchPlayer.position.x, searchPlayer.position.y, searchPlayer.position.z);
+            transform.LookAt(positionPlayer); // watch the player
+            transform.position = Vector3.MoveTowards(transform.position, positionPlayer, speed * Time.deltaTime);
+        }
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, alertRange);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -44,13 +49,13 @@ public class EnemyScript : MonoBehaviour
         {
             Destroy(collision.collider.gameObject);
             enemyHealth -= 5;
-            
+
             if (enemyHealth <= 0)
             {
                 Destroy(gameObject);
                 Debug.Log("El drone ha sido destruído!!!");
             }
-                
+
         }
     }
     void ShootPlayer() // método que dispara al player cada x tiempo
@@ -58,7 +63,8 @@ public class EnemyScript : MonoBehaviour
         Vector3 playerDirection = playerPosition.position - transform.position;
         GameObject newBullet;
         newBullet = Instantiate(enemyBullet, spawnBulletPoint.position, spawnBulletPoint.rotation);
-        newBullet.GetComponent<Rigidbody>().AddForce(playerDirection*bulletVelocity,ForceMode.Force);
+        newBullet.GetComponent<Rigidbody>().AddForce(playerDirection * bulletVelocity, ForceMode.Force);
         Invoke("ShootPlayer", 3);
     }
 }
+
